@@ -69,18 +69,44 @@
             </div>
         </div> -->
 
+
+        <div class="w-full bg-[#050505] sticky top-0 z-50">
+            <div class="container mx-auto max-w-screen-lg px-6 py-4">
+                <!-- border border-red-400 text-red-400 p-1 -->
+                <div class="hidden lg:flex flex-row items-center justify-between gap-8 lg:gap-10">
+                    <div class="links text-gray-300 cursor-pointer base" onclick="scrollToSection('base')">
+                        <p class="font-semibold text-sm">Base</p>
+                    </div>
+                    <div class="links text-gray-300 cursor-pointer about_me" onclick="scrollToSection('about_me')">
+                        <p class="font-semibold text-sm">About Me</p>
+                    </div>
+                    <div class="links text-gray-300 cursor-pointer experience">
+                        <p class="font-semibold text-sm" onclick="scrollToSection('experience')">Experience</p>
+                    </div>
+                    <div class="links text-gray-300 cursor-pointer expertise">
+                        <p class="font-semibold text-sm" onclick="scrollToSection('expertise')">Expertise</p>
+                    </div>
+                    <div class="links text-gray-300 cursor-pointer projects">
+                        <p class="font-semibold text-sm" onclick="scrollToSection('projects')">Projects</p>
+                    </div>
+                    <div class="links text-gray-300 cursor-pointer articles">
+                        <p class="font-semibold text-sm" onclick="scrollToSection('articles')">Articles</p>
+                    </div>
+                </div>        
+            </div>
+        </div>
     
-        <div class="w-full h-[500px] relative z-10 lg:h-[250px] bg-[#050505]">
+        <div class="section w-full h-[500px] relative z-10 lg:h-[400px] bg-[#050505]" id="base">
         
-            <div class="container h-full mx-auto max-w-screen-lg py-10 lg:py-10 px-6 flex flex-col gap-10 grid lg:grid-cols-2">
+            <div class="container h-full mx-auto max-w-screen-lg py-10 lg:py-10 px-6 flex flex-col gap-10 grid lg:grid-cols-3">
 
-                <div class="flex flex-col gap-3 justify-center h-full">
+                <div class="flex flex-col gap-5 justify-center h-full lg:col-span-2">
                    
-                    <h1 class=" text-gray-400 font-bold text-xl lg:text-xl text-yellow-300">Hey, I AM <span
+                    <h1 class=" text-gray-400 font-bold text-xl lg:text-3xl text-yellow-300">Hey, I AM <span
                             class="font-extrabold text-red-400">IYAPPAN</span></h1>
-                    <h1 class=" text-gray-300 font-bold text-lg lg:text-lg headine">Full Stack Developer</h1>
+                    <h1 class=" text-gray-300 font-bold text-lg lg:text-xl headine">Full Stack Developer</h1>
 
-                    <p class="text-gray-300 text-sm">Write simple, fast, self execute & concurrent code.</p>
+                    <p class="text-gray-300 text-lg">Write simple, fast, self execute & concurrent code.</p>
 
                     <div
                     class="flex flex-row items-center gap-6 mt-3">
@@ -107,51 +133,42 @@
                     </a>
                 </div>
                 </div>
+
+                <div class="relative flex justify-center items-center gap-20">
+                    <div
+                        class=" rounded-full shadow-lg">
+                        <img src="./img/tech/icons8-rust-100.png" />
+                    </div>
+
+                    <div class=" rounded-full shadow-lg relative top-[15%]">
+                        <img src="https://blockthree.github.io/img/icon/python.png" />
+                    </div>
+                    <div
+                        class="rounded-full shadow-lg hidden lg:flex">
+                        <img src="https://blockthree.github.io/img/icon/blockchain.png" />
+                    </div>
+                </div> 
     
-                <div class="relative z-10 flex">
+                <!-- <div class="relative z-10 flex">
                     <div
                         class="absolute right-[30%] top-[50%] rounded-full shadow-lg">
                         <img src="https://blockthree.github.io/img/icon/rust.png" />
                     </div>
 
-                    <div class="absolute left-[35%] top-[1%] rounded-full shadow-lg">
+                    <div class="absolute left-[35%] top-[40%] rounded-full shadow-lg">
                         <img src="https://blockthree.github.io/img/icon/python.png" class="w-[50px] h-[50px]" />
                     </div>
                     <div
-                        class="absolute bottom-[5%] left-[30%] rounded-full shadow-lg hidden lg:flex">
+                        class="absolute bottom-[35%] left-[30%] rounded-full shadow-lg hidden lg:flex">
                         <img src="https://blockthree.github.io/img/icon/blockchain.png" class="w-[50px] h-[50px]" />
                     </div>
-                </div> 
+                </div>  -->
     
             </div>
 
         </div>
 
     
-
-        <div class="w-full bg-[#050505] sticky top-0 z-50">
-            <div class="container mx-auto max-w-screen-lg px-6 py-4">
-                <!-- border border-red-400 text-red-400 p-1 -->
-                <div class="hidden lg:flex flex-row items-center gap-8 lg:gap-10">
-                    <div class="links text-gray-300 cursor-pointer about_me" onclick="scrollToSection('about_me')">
-                        <p class="font-semibold text-sm">About Me</p>
-                    </div>
-                    <div class="links text-gray-300 cursor-pointer experience">
-                        <p class="font-semibold text-sm" onclick="scrollToSection('experience')">Experience</p>
-                    </div>
-                    <div class="links text-gray-300 cursor-pointer expertise">
-                        <p class="font-semibold text-sm" onclick="scrollToSection('expertise')">Expertise</p>
-                    </div>
-                    <div class="links text-gray-300 cursor-pointer projects">
-                        <p class="font-semibold text-sm" onclick="scrollToSection('projects')">Projects</p>
-                    </div>
-                    <div class="links text-gray-300 cursor-pointer articles">
-                        <p class="font-semibold text-sm" onclick="scrollToSection('articles')">Articles</p>
-                    </div>
-                </div>        
-            </div>
-        </div>
-
        
 
 
