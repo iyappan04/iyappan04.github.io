@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>About Me</title>
+    <link rel="icon" type="image/x-icon" href="./img/rocket.png">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -70,9 +71,8 @@
         </div> -->
 
 
-        <div class="w-full bg-[#050505] fixed top-0 z-50">
+        <!-- <div class="w-full bg-[#050505] fixed top-0 z-50">
             <div class="container mx-auto max-w-screen-lg px-6 py-4">
-                <!-- border border-red-400 text-red-400 p-1 -->
                 <div class="hidden lg:flex flex-row items-center justify-between gap-8 lg:gap-10">
                     <div class="links text-gray-300 cursor-pointer base" onclick="scrollToSection('base')">
                         <p class="font-semibold text-sm">Base</p>
@@ -94,11 +94,11 @@
                     </div>
                 </div>        
             </div>
-        </div>
+        </div> -->
     
-        <div class="section w-full h-screen relative z-10 lg:h-fit bg-[#050505]" id="base">
+        <div class="section w-full h-screen relative z-10 lg:h-[400px] bg-[#050505]" id="base">
         
-            <div class="container h-full mx-auto max-w-screen-lg py-10 lg:py-10 px-6 flex flex-col gap-10 grid lg:grid-cols-3 relative">
+            <div class="container h-full mx-auto max-w-screen-lg py-10 lg:pb-20 px-6 flex flex-col gap-10 grid lg:grid-cols-3 relative">
 
                 <div
                     class="absolute bottom-1 z-10 lg:bottom-10 flex flex-row items-center justify-center gap-6 bg-[#050505] mt-3 w-full">
@@ -137,12 +137,18 @@
 
                     <p class="text-gray-300 text-sm font-bold">Write <span class="text-red-400 font-bold">simple, fast, self execute & concurrent code. </span></p>
 
-                    
                 
                 </div>
 
                 <div class="relative flex justify-center items-center gap-10 p-10 lg:p-0">
-                    <img src="./img/homedesign.png" alt="">
+
+                    <img src="/img/rocket.png" id="changeimage" alt="astronaut"/>
+
+                    <!-- <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+    <dotlottie-player src="https://lottie.host/05365d59-06d6-4e97-afcc-aeb473cb376a/f3G92KOIAV.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></dotlottie-player> -->
+
+                    <!-- <img src="./img/homedesign.png" alt=""> -->
                     <!-- <div class=" rounded-full shadow-lg relative top-[5%]">
                         <img src="./img/blockchain.png"  class="w-[50px] h-[50px]" />
                     </div>
@@ -258,6 +264,31 @@
         </div>
     </div> -->
 
+    <div class="w-full bg-[#050505] sticky top-0 z-50">
+        <div class="container mx-auto max-w-screen-lg px-6 py-4">
+            <!-- border border-red-400 text-red-400 p-1 -->
+            <div class="hidden lg:flex flex-row items-center justify-between gap-8 lg:gap-10">
+                <div class="links text-gray-300 cursor-pointer base" onclick="scrollToSection('base')">
+                    <p class="font-semibold text-sm">Base</p>
+                </div>
+                <div class="links text-gray-300 cursor-pointer about_me" onclick="scrollToSection('about_me')">
+                    <p class="font-semibold text-sm">About Me</p>
+                </div>
+                <div class="links text-gray-300 cursor-pointer experience">
+                    <p class="font-semibold text-sm" onclick="scrollToSection('experience')">Experience</p>
+                </div>
+                <div class="links text-gray-300 cursor-pointer expertise">
+                    <p class="font-semibold text-sm" onclick="scrollToSection('expertise')">Expertise</p>
+                </div>
+                <div class="links text-gray-300 cursor-pointer projects">
+                    <p class="font-semibold text-sm" onclick="scrollToSection('projects')">Projects</p>
+                </div>
+                <div class="links text-gray-300 cursor-pointer articles">
+                    <p class="font-semibold text-sm" onclick="scrollToSection('articles')">Articles</p>
+                </div>
+            </div>        
+        </div>
+    </div>
 
     <div class="section bg-[#050505]" id="about_me">
         <div class="container mx-auto max-w-screen-lg py-5 lg:py-5 px-6 flex flex-col gap-10">
@@ -604,7 +635,63 @@ threading & memory safe. ability to work with future development technologies. G
         };
           
 
+        // src="/img/ast.png" id="changeimage"
+
+
+        function changeimageInHome(){
+            let changeimage = document.getElementById("changeimage");
+
+            setTimeout(() => {
+                changeimage.src="/img/log3.png"
+            }, 1000)
+
+            setTimeout(() => {
+                changeimage.src="/img/rocket.png"
+            }, 2000)
+
+            setTimeout(() => {
+                changeimage.src="/img/wrti.png"
+            }, 3000)
+
+    
+            setTimeout(() => {
+                changeimage.src="/img/log4.png"
+            }, 4000)
+
+            setTimeout(() => {
+                changeimage.src="/img/module.png"
+            }, 5000)
+
+
+            setInterval(() => {
+                setTimeout(() => {
+                    changeimage.src="/img/log3.png"
+                }, 1000)
+    
+                setTimeout(() => {
+                    changeimage.src="/img/rocket.png"
+                }, 2000)
+    
+                setTimeout(() => {
+                    changeimage.src="/img/wrti.png"
+                }, 3000)
+    
+               
+    
+                setTimeout(() => {
+                    changeimage.src="/img/log4.png"
+                }, 4000)
+
+                setTimeout(() => {
+                    changeimage.src="/img/module.png"
+                }, 5000)
+
+            }, 4000)
+
+        }
        
+        changeimageInHome()
+
         function navToggle(){
 
             let navMenu = document.querySelector(".navMenu");
@@ -618,6 +705,7 @@ threading & memory safe. ability to work with future development technologies. G
             let navMenu = document.querySelector(".navMenu");
             navMenu.classList.add("hidden");
         }
+
 
 
         function heading() {
@@ -640,25 +728,22 @@ threading & memory safe. ability to work with future development technologies. G
             }, 4000)
 
             setInterval(() => {
-
                 setTimeout(() => {
                     headine.textContent = "Programmer"
                 }, 1000)
-
+    
                 setTimeout(() => {
                     headine.textContent = "Full Stack Developer"
                 }, 2000)
-
+    
                 setTimeout(() => {
                     headine.textContent = "Rust Developer"
                 }, 3000)
-
+    
                 setTimeout(() => {
                     headine.textContent = "Web3 & Blockchain Developer"
                 }, 4000)
-
             }, 4000)
-
 
         }
 
