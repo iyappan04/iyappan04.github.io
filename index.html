@@ -69,27 +69,27 @@
         }
     </style>
 
-    <div class="section w-full bg-[#050505] lg:h-screen flex flex-col justify-center" id="base">
+    <div class="section w-full bg-[#050505] h-screen flex flex-col justify-center" id="base">
 
-        <div class="container mx-auto max-w-screen-lg px-6 py-10 flex flex-col-reverse gap-10 lg:flex-row lg:justify-between">
+        <div class="container mx-auto max-w-screen-lg px-6 py-10 flex flex-col gap-10 lg:flex-row lg:justify-between">
 
-            <div class="hidden lg:flex flex-col gap-4 lg:gap-6 justify-center">
+            <div class="flex flex-col gap-4 lg:gap-6 justify-center">
 
-                <h1 class="text-gray-400 font-bold text-center lg:text-left text-2xl lg:text-3xl text-yellow-300">Hey, I AM <span
+                <h1 class="text-gray-400 font-bold text-left text-xl lg:text-xl text-yellow-300">Hey, I AM <span
                         class="font-extrabold text-red-400">IYAPPAN</span></h1>
 
-                <div class="flex flex-col gap-4 mt-3">
-                    <p class="text-gray-300 text-sm font-bold text-center lg:text-left">Write <span
+                <div class="flex flex-col gap-4">
+                    <!-- <p class="text-gray-300 text-sm font-bold text-left">Write <span
                             class="text-red-400 font-bold">simple, fast, self
-                            execute & concurrent code. </span></p>
-                     <h3 class="text-gray-300 font-semibold text-base headine text-center lg:text-left">Full Stack Developer</h3>
+                            execute & concurrent code. </span></p> -->
+                     <h3 class="text-gray-300 font-semibold text-base headine text-left">Full Stack Developer</h3>
                 </div> 
 
                
 
-                <div class="flex flex-row items-center justify-center lg:justify-start gap-5 mt-3">
+                <div class="flex flex-row items-center gap-5">
                     <a href="https://medium.com/@iyappan04"
-                        class="flex items-center gap-2 px-2 py-1 border border-[#f87171]">
+                        class="flex items-center gap-2 px-2 py-1 border-b border-[#f87171]">
                         <p>
                             <svg class="text-[#f87171]" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-medium" viewBox="0 0 16 16">
@@ -100,7 +100,7 @@
                         <p class="text-[#f87171] text-xs font-bold">Medium</p>
                     </a>
                     <a href="https://github.com/iyappan04"
-                        class="flex items-center gap-2 px-2 py-1 border border-[#f87171]">
+                        class="flex items-center gap-2 px-2 py-1 border-b border-[#f87171]">
                         <p>
                             <svg class="text-[#f87171]" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
@@ -111,7 +111,7 @@
                         <p class="text-[#f87171] text-xs font-bold">Github</p>
                     </a>
                     <a href="https://www.linkedin.com/in/iyappan-m-a5411023b/"
-                        class="flex items-center gap-2 px-2 py-1 border border-[#f87171]">
+                        class="flex items-center gap-2 px-2 py-1 border-b border-[#f87171]">
                         <p>
                             <svg class="text-red-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
@@ -137,7 +137,7 @@
                     type="module"></script>
 
                 <dotlottie-player src="https://lottie.host/cf35c928-ed9e-4e57-9250-94c99eba868a/N4XH24kecL.lottie"
-                    background="transparent" speed="1" class="h-[250px] w-[250px] lg:w-[400px] lg:h-[400px]" loop
+                    background="transparent" speed="1" class="h-[250px] w-[250px] lg:w-[250px] lg:h-[250px]" loop
                     autoplay></dotlottie-player>
 
             </div>
@@ -146,7 +146,7 @@
     </div>
 
 
-    <div class="w-full bg-[#050505] sticky top-0 z-50">
+    <div class="hidden lg:flex w-full bg-[#050505] sticky top-0 z-50">
         <div class="container mx-auto max-w-screen-lg px-6 py-4">
             <!-- border border-red-400 text-red-400 p-1 -->
             <div class="hidden lg:flex flex-row items-center justify-between gap-8 lg:gap-10">
@@ -210,7 +210,7 @@
 
                     <div>
                         <a href="./docs/IYAPPAN M.pdf"
-                            class="bg-black-800 text-red-400 font-bold px-1.5 py-1.5 text-sm border border-red-400">Download
+                            class="bg-black-800 text-red-400 font-bold px-1.5 py-1 text-sm border border-red-400">Download
                             CV</a>
                     </div>
                 </div>
@@ -242,12 +242,9 @@
                     </h3>
                     <time class="block mb-2 text-sm font-normal text-gray-400 dark:text-gray-500">
                         July 10, 2023 (Bengaluru, Karnataka)</time>
-                    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">I have worked on various
-                        projects, including Ecommerce, Real Estate, HRMS, and a Noise Cancellation System, among others.
-                        With over 1+ years of experience, I am passionate about my work and have taken on leadership
-                        roles. My technical skills include working with Django, Rust, Python, Linux, and Vue.js. I am
-                        now eager to expand my expertise into the Web3 space and contribute to the development of
-                        decentralized applications.</p>
+                    <!-- <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                        Ecommerce, HRMS & Invoice, Audio Noise Cancellation, LMS, Event Organization Platforms
+                    </p> -->
                 </li>
                 <li class="mb-10 ms-6">
                     <span
@@ -258,19 +255,16 @@
 
                     </span>
                     <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">B.SC - Computer Science &
-                        Intern at Chadura Tech</h3>
-                    <time class="block mb-2 text-sm font-normal text-gray-400 dark:text-gray-500">2020 - 2023
+                        Intern at Chadura Tech (2021 - 3 MONTHS)</h3>
+                    <time class="block mb-2 text-sm font-normal text-gray-400 dark:text-gray-500">2021 - 2023
                         (Bharathidasan University)</time>
-                    <p class="text-base font-normal text-gray-500 dark:text-gray-400">During my college days, I interned
-                        at Chadura Tech, where I developed several projects using Python and gained hands-on experience
-                        with Linux systems. Additionally, I worked on a machine learning project using Python and ML
-                        techniques. This project aimed to predict students' future results based on previous sample
-                        data, leveraging machine learning algorithms to train the model.
-                    </p>
+                    <!-- <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+                        Linux, Python, Shell Scripting, 
+                    </p> -->
 
                     <div class="py-4 w-full">
                         <a href="./docs/Certificate.pdf"
-                            class="bg-black-800 text-gray-300 px-1.5 py-1.5 text-sm border border-red-400 text-red-400 font-bold">View
+                            class="bg-black-800 text-gray-300 px-1.5 py-1.5 text-xs border border-red-400 text-red-400 font-bold">View
                             <span class="inline-flex sm:hidden">ML</span><span class="hidden sm:inline-flex">Machine
                                 Learning</span> Certificate</a>
                     </div>
@@ -464,44 +458,44 @@
                 <p class="text-sm font-bold text-red-400">Here are my articles</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-10">
-                <div class="flex flex-col gap-2 border border-red-400 p-3">
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-y-6 gap-x-10">
+                <div class="flex flex-col gap-2 border-b border-red-400 p-3">
                     <p class="font-semibold text-left text-base text-gray-300">Move Production | Deploy Actix Web (4)
                         Using, Nginx, Supervisor & CORS.</p>
                     <a href="https://medium.com/@iyappan04" class="text-xs font-bold underline text-red-400">View</a>
                 </div>
-                <div class="flex flex-col gap-2 border border-red-400 p-3">
+                <div class="flex flex-col gap-2 border-b border-red-400 p-3">
                     <p class="font-semibold text-left text-base text-gray-300">Simple File Creation App Using Rust.</p>
                     <a href="https://medium.com/@iyappan04" class="text-xs font-bold underline text-red-400">View</a>
                 </div>
-                <div class="flex flex-col gap-2 border border-red-400 p-3">
+                <div class="flex flex-col gap-2 border-b border-red-400 p-3">
                     <p class="font-semibold text-left text-base text-gray-300">Hello World in Rust.</p>
                     <a href="https://medium.com/@iyappan04" class="text-xs font-bold underline text-red-400">View</a>
                 </div>
-                <div class="flex flex-col gap-2 border border-red-400 p-3">
+                <div class="flex flex-col gap-2 border-b border-red-400 p-3">
                     <p class="font-semibold text-left text-base text-gray-300">Django JWT Authentication | Authorization
                     </p>
                     <a href="https://medium.com/@iyappan04" class="text-xs font-bold underline text-red-400">View</a>
                 </div>
-                <div class="flex flex-col gap-2 border border-red-400 p-3">
+                <div class="flex flex-col gap-2 border-b border-red-400 p-3">
                     <p class="font-semibold text-left text-base text-gray-300">Actix web Diesel Rest Api With Postgres.
                     </p>
                     <a href="https://medium.com/@iyappan04" class="text-xs font-bold underline text-red-400">View</a>
                 </div>
-                <div class="flex flex-col gap-2 border border-red-400 p-3">
+                <div class="flex flex-col gap-2 border-b border-red-400 p-3">
                     <p class="font-semibold text-left text-base text-gray-300">DRF’S Token Vs JWT Token in Django</p>
                     <a href="https://medium.com/@iyappan04" class="text-xs font-bold underline text-red-400">View</a>
                 </div>
-                <div class="flex flex-col gap-2 border border-red-400 p-3">
+                <div class="flex flex-col gap-2 border-b border-red-400 p-3">
                     <p class="font-semibold text-left text-base text-gray-300">Deploy Django Project into AWS EC2
                         Server.</p>
                     <a href="https://medium.com/@iyappan04" class="text-xs font-bold underline text-red-400">View</a>
                 </div>
-                <div class="flex flex-col gap-2 border border-red-400 p-3">
+                <div class="flex flex-col gap-2 border-b border-red-400 p-3">
                     <p class="font-semibold text-left text-base text-gray-300">Automate Git Using Linux Bash Script.</p>
                     <a href="https://medium.com/@iyappan04" class="text-xs font-bold underline text-red-400">View</a>
                 </div>
-                <div class="flex flex-col gap-2 border border-red-400 p-3">
+                <div class="flex flex-col gap-2 border-red-400 p-3">
                     <p class="font-semibold text-left text-base text-gray-300">Merge Sort Algorithm in Rust | Code
                         Optimization</p>
                     <a href="https://medium.com/@iyappan04" class="text-xs font-bold underline text-red-400">View</a>
@@ -510,16 +504,16 @@
             </div>
 
 
-            <div class="flex items-center justify-center">
+            <!-- <div class="flex items-center justify-center">
                 <a href="https://medium.com/@iyappan04"
                     class="bg-black-800 px-1.5 py-1.5 text-sm border border-red-400 text-red-400 font-bold">View
                     More</a>
-            </div>
+            </div> -->
 
         </div>
     </div>
 
-
+    <!-- 
     <div class="section bg-[#050505]">
         <div
             class="container mx-auto max-w-xl py-5 px-6 flex flex-col-reverse md:flex-row items-center gap-10 lg:gap-5 justify-between">
@@ -535,7 +529,7 @@
             <img src="./img/rocket.png" class="w-[50px] h-[50px] lg:w-[100px] lg:h-[100px]" alt="">
 
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -689,7 +683,7 @@
             }, 3000)
 
             setTimeout(() => {
-                headine.textContent = "Web3 & Blockchain Developer"
+                headine.textContent = "Blockchain Developer"
             }, 4000)
 
             setInterval(() => {
@@ -706,7 +700,7 @@
                 }, 3000)
 
                 setTimeout(() => {
-                    headine.textContent = "Web3 & Blockchain Developer"
+                    headine.textContent = "Blockchain Developer"
                 }, 4000)
             }, 4000)
 
