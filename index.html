@@ -38,9 +38,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> -->
 
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> -->
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 </head>
 
@@ -49,65 +54,49 @@
     <style>
         * {
             scroll-behavior: smooth;
-            font-family: "Space Mono", monospace !important;
+            font-family: "Inter", sans-serif !important;
         }
 
-        @font-face {
-            font-family: inter;
-            src: url('fonts/Inter-Black.otf');
-        }
-
-        @font-face {
-            font-family: interr;
-            src: url('fonts/Inter-Regular.otf');
-        }
-
-        @font-face {
-            font-family: inters;
-            src: url('fonts/Inter-SemiBold.otf');
-        }
-
-        .headf {
-            font-family: inter;
-        }
-
-        .pf{
-            font-family: interr;
-        }
-
-        .semi{
-            font-family: inters;
-        }
-
+     
     </style>
 
+    <!-- <div class="bg-white"> 
+        <img src="./img/bg.jpg" class="h-[500px] w-full object-cover" alt="">
+    </div>
+     -->
+    <div class="section py-10 px-6" id="about_me">
 
-    <div class="section bg-[#181618] pt-5" id="about_me">
-
-        <div class="container mx-auto max-w-5xl py-5 lg:py-5 px-6 flex flex-col gap-3 w-full">
+        <div class="container mx-auto max-w-5xl py-10 lg:py-20 px-6 flex flex-col gap-3 w-full bg-black rounded-2xl">
 
             <div>
-                <h2 class="text-gray-300 text-2xl font-extrabold">
-                    IYAPPAN M</h2>
+                <h2 class="text-white text-center text-lg lg:text-2xl font-bold">
+                    Blockchain, Web, ML Engineer</h2>
             </div>
         
-          
-
-            <h2 class="text-base text-gray-300 leading-loose headf">Developer / Architect</h2> 
+            <h2 class="text-base text-center text-white leading-loose font-semibold">2 Years of Experience</h2> 
 
         </div>
     </div>
     
 
-    <div class="section bg-[#181618] pt-2" id="about_me">
+    <div class="section pt-5" id="about_me">
         <div class="container mx-auto max-w-5xl py-5 lg:py-5 px-6 flex flex-col gap-10">
             <div class="flex flex-col lg:flex-row w-full items-start gap-5 lg:gap-0">
                 <div class="w-full lg:w-[40%] flex flex-col gap-4"> 
 
 
 
-                    <div class="w-full flex items-center justify-center">
-                        <img src="./img/me.jpg" class="rounded-full border-4 border-yellow-700 bg-gray-500 w-[190px] h-[190px] lg:w-[170px] lg:h-[170px] object-cover" />
+                    <div class="w-full flex flex-col items-center justify-center lg:items-start lg:justify-start">
+                        <img src="./img/me.jpg" class="rounded-full border-2 w-[190px] h-[190px] lg:w-[170px] lg:h-[170px] object-cover" />
+
+                        <div class="mt-5">
+                            <h2 class="text-black text-xl font-bold">
+                                IYAPPAN M</h2>
+                        </div>
+                    
+                      
+            
+                        <h2 class="text-sm text-black leading-loose font-medium">Developer / Architect</h2> 
 
                     </div>
                     <div class="flex flex-col gap-2">
@@ -115,13 +104,13 @@
 
                         <!-- <div class="mt-4 flex items-center flex-wrap gap-2">
                             <a href="https://github.com/iyappan04"
-                                class="text-sm px-4 py-1 rounded-lg font-bold text-white bg-[#181618]">Github
+                                class="text-sm px-4 py-1 rounded-lg font-bold text-white">Github
                                 </a>
                                 <a href="https://medium.com/@iyappan04"
-                                class="text-sm px-4 py-1 rounded-lg font-bold text-white bg-[#181618]">Medium
+                                class="text-sm px-4 py-1 rounded-lg font-bold text-white">Medium
                                 </a>
                                 <a href="./docs/IYAPPAN M.pdf"
-                                class="text-sm px-4 py-1 rounded-lg font-bold text-white bg-[#181618]">Linkdin
+                                class="text-sm px-4 py-1 rounded-lg font-bold text-white">Linkdin
                                 </a>
                         </div> -->
 
@@ -129,17 +118,17 @@
                 </div>
                 <div class="w-full lg:w-[60%] flex flex-col gap-3">
                     <!-- <div>
-                        <h2 class="text-gray-300 font-bold text-lg">I AM, <span
-                                class= text-gray-300">IYAPPAN<span></h2>
+                        <h2 class="text-black font-bold text-lg">I AM, <span
+                                class= text-black">IYAPPAN<span></h2>
                     </div>
 
 
-                    <h2 class="text-sm font-bold text-gray-300 leading-loose">Web | Web3 | ML | Rust | Python |
+                    <h2 class="text-sm font-bold text-black leading-loose">Web | Web3 | ML | Rust | Python |
                         Blockchain Developer</h2> -->
 
-                    <!-- <p class="text-lg text-gray-300 headf">Rust / ML / Python / Machine Learning / Blockchain</p> -->
+                    <!-- <p class="text-lg text-black font-extrabold text-yellow-700">Rust / ML / Python / Machine Learning / Blockchain</p> -->
 
-                    <div class="flex items-center flex-wrap gap-3"> 
+                    <!-- <div class="flex items-center flex-wrap gap-3"> 
                         <a href="./docs/IYAPPAN M.pdf"
                         class="text-xs px-2 py-1 rounded-lg font-bold bg-white text-gray-800 semi">Rust</a>
                         <a href="./docs/IYAPPAN M.pdf"
@@ -152,9 +141,9 @@
                         class="text-xs px-2 py-1 rounded-lg font-bold bg-white text-gray-800 semi">Vue JS</a>
                         <a href="./docs/IYAPPAN M.pdf"
                         class="text-xs px-2 py-1 rounded-lg font-bold bg-white text-gray-800 semi">Django</a>
-                    </div>
+                    </div> -->
 
-                    <p class="text-base text-gray-300 font-medium pf mt-5">
+                    <p class="text-base text-black mt-5">
                         Experienced in software development, Deep understanding about programming. More care
                         about structure, modularity, code reusable, threading, time & space complexity, well
                         understanding about
@@ -168,7 +157,7 @@
 
                     <div class="mt-4">
                         <a href="./docs/IYAPPAN M.pdf"
-                            class="text-xs px-4 py-1.5 rounded-lg font-bold bg-white text-gray-800 semi">Download
+                            class="text-xs px-4 py-2 rounded-full font-medium bg-black text-white">Download
                             Resume</a>
                     </div>
                 </div>
@@ -177,15 +166,15 @@
     </div>
 
 
-    <div class="section bg-[#181618]" id="experience">
-        <div class="container mx-auto max-w-5xl py-10 lg:py-10 px-6 flex flex-col gap-10">
+    <div class="section" id="experience">
+        <div class="container mx-auto max-w-5xl py-10 lg:py-10 px-6 flex flex-col gap-5">
 
             <div class="flex flex-col gap-2">
-                <h1 class="text-xl text-gray-300 headf">Experience</h1>
+                <h1 class="text-lg font-bold text-black">Experience</h1>
             </div>
 
             <ol class="relative border-[#694235] dark:border-gray-700">
-                <li class="mb-10 border-2 rounded-2xl p-5">
+                <li class="mb-5 border-2 rounded-2xl p-5">
                     <!-- <span
                         class="absolute flex items-center justify-center w-6 h-6 !bg-white rounded-full -start-3 ring-8 ring-white">
 
@@ -193,20 +182,20 @@
                             src="https://img.icons8.com/pastel-glyph/64/000000/briefcase--v3.png" alt="briefcase--v3" />
 
                     </span> -->
-                    <h3 class="flex items-center mb-1 text-base text-gray-300 semi">Full Stack
+                    <h3 class="flex items-center mb-1 text-base text-black semi font-bold">Full Stack
                         Developer - Chadura Tech
                         <!-- <span
-                            class="hidden lg:flex text-xs px-4 py-1 rounded-full font-bold text-white bg-[#181618] ml-4 semi">Current</span> -->
+                            class="hidden lg:flex text-xs px-4 py-1 rounded-full font-bold text-white ml-4 semi">Current</span> -->
                     </h3>
                     <div class="flex lg:hidden">
                         <!-- <p
-                        class="text-sm px-4 py-1 rounded-lg font-bold text-white bg-[#181618] my-2">Current</p> -->
+                        class="text-sm px-4 py-1 rounded-lg font-bold text-white my-2">Current</p> -->
                     </div>
                    
-                    <p class="text-sm mb-1 text-gray-500 font-bold pf">2 Years of Experience / July 10, 2023 (Bengaluru, Karnataka)</p>
-                    <!-- <time class="block mb-2 text-sm font-normal text-gray-500">
+                    <p class="text-sm mb-1 text-black pf">2 Years of Experience / July 10, 2023 (Bengaluru, Karnataka)</p>
+                    <!-- <time class="block mb-2 text-sm font-normal text-black">
                         </time> -->
-                    <!-- <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                    <!-- <p class="mb-4 text-base font-normal text-black dark:text-gray-400">
                         Ecommerce, HRMS & Invoice, Audio Noise Cancellation, LMS, Event Organization Platforms
                     </p> -->
                 </li>
@@ -218,17 +207,18 @@
                             alt="education" />
 
                     </span> -->
-                    <h3 class="mb-1 text-base text-gray-300 semi">
-                        Intern at Chadura Tech & Machine Learning Course</h3>
-                    <time class="block mb-2 text-sm text-gray-500 font-bold pf">2021
+                    <h3 class="mb-1 text-base text-black semi font-bold">
+                        Intern at Chadura Tech</h3>
+                    <time class="block mb-2 text-sm text-black">2021
                         (Bharathidasan University)</time>
-
+                    
+                    <!-- 
                     <div class="py-4 w-full">
                         <a href="./docs/Certificate.pdf"
-                            class="px-3 py-1.5 rounded-lg font-bold text-xs text-gray-900 bg-white semi">View
+                            class="px-4 py-2 rounded-full bg-black text-xs text-white">View
                             <span class="inline-flex sm:hidden semi">ML</span><span class="hidden sm:inline-flex">Machine
                                 Learning</span> Certificate</a>
-                    </div>
+                    </div> -->
 
 
                 </li>
@@ -238,33 +228,44 @@
     </div>
 
 
-    <div class="section bg-[#181618]" id="expertise">
+    <div class="section" id="expertise">
 
-        <div class="container mx-auto max-w-5xl py-10 lg:py-10 px-6 flex flex-col gap-10">
+        <div class="container mx-auto max-w-5xl px-6 flex flex-col gap-10">
+            <!-- <div class="flex flex-col gap-2">
+                <h1 class="text-xl text-black font-bold text-yellow-700"></h1>
+            </div> -->
+
             <div class="flex flex-col gap-2">
-                <h1 class="text-xl text-gray-300 headf">Expertise</h1>
+                <h1 class="text-lg font-bold text-black">Expertise</h1>
             </div>
 
             <div class="grid grid-cols-3 lg:grid-cols-7 gap-y-6 gap-x-6">
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Rust</a>
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/python--v1.png" alt="python--v1"/>
+                    <!-- <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Rust</a> -->
                 </div>
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Actix Web</a>
+                    <!-- <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Actix Web</a>
+                     -->
+                     <img width="48" height="48" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/50/external-rust-is-a-multi-paradigm-system-programming-language-logo-color-tal-revivo.png" alt="external-rust-is-a-multi-paradigm-system-programming-language-logo-color-tal-revivo"/>
                 </div>
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Solidity</a>
+                    <img width="50" height="50" src="https://img.icons8.com/ios/50/django.png" alt="django"/>
                 </div>
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Python</a>
+                    <!-- <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Python</a>
+                     -->
+                     <img width="50" height="50" src="https://img.icons8.com/ios/50/flask.png" alt="flask"/>
                 </div>
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Django</a>
+                    <!-- <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Django</a> -->
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/vue-js.png" alt="vue-js"/>
                 </div>
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Docker</a>
+                    <!-- <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Docker</a> -->
+                    <img width="48" height="48" src="https://img.icons8.com/color/48/bash.png" alt="bash"/>
                 </div>
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
+                <!-- <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
                     <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">AWS</a>
                 </div>
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
@@ -272,8 +273,8 @@
                 </div>
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
                     <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Linux</a>
-                </div>
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
+                </div> -->
+                <!-- <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
                     <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">CSS</a>
                 </div>
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
@@ -293,20 +294,20 @@
                 </div>
                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
                     <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">HTML & JS</a>
-                </div>
-                <!-- <div class="text-center w-full bg-[#181618] rounded-xl py-2 px-1">
+                </div> -->
+                <!-- <div class="text-center w-full rounded-xl py-2 px-1">
                     <a href="#" class="text-sm px-6 py-1.5 rounded-lg font-bold text-white">Git & Github</a>
                 </div>
-                <div class="text-center w-full bg-[#181618] rounded-xl py-2 px-1">
+                <div class="text-center w-full rounded-xl py-2 px-1">
                     <a href="#" class="text-sm px-6 py-1.5 rounded-lg font-bold text-white">Node</a>
                 </div>
-                <div class="text-center w-full bg-[#181618] rounded-xl py-2 px-1">
+                <div class="text-center w-full rounded-xl py-2 px-1">
                     <a href="#" class="text-sm px-6 py-1.5 rounded-lg font-bold text-white">Apache Kafka</a>
                 </div>
-                <div class="text-center w-full bg-[#181618] rounded-xl py-2 px-1">
+                <div class="text-center w-full rounded-xl py-2 px-1">
                     <a href="#" class="text-sm px-6 py-1.5 rounded-lg font-bold text-white">Grafana</a>
                 </div>
-                <div class="text-center w-full bg-[#181618] rounded-xl py-2 px-1">
+                <div class="text-center w-full rounded-xl py-2 px-1">
                     <a href="#" class="text-sm px-6 py-1.5 rounded-lg font-bold text-white">Programming</a>
                 </div> -->
             </div>
@@ -315,181 +316,190 @@
     </div>
 
 
-    <div class="section bg-[#181618]" id="projects">
+    <div class="section" id="projects">
         <div class="container mx-auto max-w-5xl py-10 lg:py-10 px-6 flex flex-col gap-6">
+            <!-- <div class="flex flex-col gap-2">
+                <h1 class="text-xl text-black font-extrabold text-yellow-700">Projects</h1>
+            </div> -->
+
             <div class="flex flex-col gap-2">
-                <h1 class="text-xl text-gray-300 headf">Projects</h1>
+                <h1 class="text-lg font-bold text-black">Projects</h1>
             </div>
 
-            <!-- <div class="grid grid-cols-1 gap-y-6 gap-x-10">
+               <!-- <div class="grid grid-cols-1 gap-y-6 gap-x-10">
                 <div class="flex flex-col gap-4">
                     <div class="flex">
-                        <p class="text-sm px-4 py-1 rounded-lg font-bold text-white bg-[#181618]">Group Chat</p>
+                        <p class="text-sm px-4 py-1 rounded-lg font-bold text-white">Group Chat</p>
                     </div>
                 </div>
                 <div class="flex flex-col gap-4">
                     <div class="flex">
-                        <p class="text-sm px-4 py-1 rounded-lg font-bold text-white bg-[#181618]">University Admission
+                        <p class="text-sm px-4 py-1 rounded-lg font-bold text-white">University Admission
                             Predication (ML)</p>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-4">
                     <div class="flex">
-                        <p class="text-sm px-4 py-1 rounded-lg font-bold text-white bg-[#181618]">Supply Chain (Web3)</p>
+                        <p class="text-sm px-4 py-1 rounded-lg font-bold text-white">Supply Chain (Web3)</p>
                     </div>
                 </div>
 
             </div> -->
 
             <div class="grid lg:grid-cols-3 gap-5">
-                <div class="flex flex-col gap-2 border border-2 p-5 rounded-xl">
+                <div class="flex flex-col gap-2 border p-5 rounded-xl">
                     
-                    <div class="mt-3">
+                    <div class="">
                         <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi mt-10">Audio Noise Cancellation</a>
                     </div>
-                    <div class="flex flex-col gap-2 p-4 text-sm"> 
-                        <li class="text-gray-300 text-sm pf">Build audio recording using base64 format and django.</li>
-                        <li class="text-gray-300 text-sm pf">Model integration using machine learning.</li>
-                    </div>
-
+                    <!-- <div class="flex flex-col gap-2 p-4 text-sm"> 
+                        <li class="text-black text-sm pf">Build audio recording using base64 format and django.</li>
+                        <li class="text-black text-sm pf">Model integration using machine learning.</li>
+                    </div> -->
                 </div>
 
-                <div class="flex flex-col gap-2 border border-2 p-5 rounded-xl">
-                    <div class="mt-3">
+                <div class="flex flex-col gap-2 border p-5 rounded-xl">
+                    <div class="">
                         <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">Group Chat</a>
                     </div>
-                    <div class="flex flex-col gap-2 p-4 text-sm"> 
-                        <li class="text-gray-300 text-sm pf">Websocket integration both frontend & backend integration</li>
-                        <li class="text-gray-300 text-sm pf">Stripe payment integration, suscription</li>
-                        <li class="text-gray-300 text-sm pf">Custom middleware integration</li>
-                    </div>
+                    <!-- <div class="flex flex-col gap-2 p-4 text-sm"> 
+                        <li class="text-black text-sm pf">Websocket integration both frontend & backend integration</li>
+                        <li class="text-black text-sm pf">Stripe payment integration, suscription</li>
+                        <li class="text-black text-sm pf">Custom middleware integration</li>
+                    </div> -->
                 </div>
 
-                <div class="flex flex-col gap-2 border border-2 p-5 rounded-xl">
-                    <div class="mt-3">
+                <div class="flex flex-col gap-2 border p-5 rounded-xl">
+                    <div class="">
                         <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">LMS</a>
                     </div>
-                    <div class="flex flex-col gap-2 p-4 text-sm"> 
-                        <li class="text-gray-300 text-sm pf">Student mangement and course management system</li>
-                        <li class="text-gray-300 text-sm pf">Create course with ai</li>
-                        <li class="text-gray-300 text-sm pf">Audio & video file Integration</li>
-                        <li class="text-gray-300 text-sm pf">Credential management system</li>
-                    </div>
+                    <!-- <div class="flex flex-col gap-2 p-4 text-sm"> 
+                        <li class="text-black text-sm pf">Student mangement and course management system</li>
+                        <li class="text-black text-sm pf">Create course with ai</li>
+                        <li class="text-black text-sm pf">Audio & video file Integration</li>
+                        <li class="text-black text-sm pf">Credential management system</li>
+                        <li class="text-black text-sm pf">Large file Upload</li>
+                        <li class="text-black text-sm pf">Plagiarism checker</li>
+                    </div> -->
                 </div>
 
-                <div class="flex flex-col gap-2 border border-2 p-5 rounded-xl">
-                    <div class="mt-3">
+                <div class="flex flex-col gap-2 border p-5 rounded-xl">
+                    <div class="">
                         <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">University Admission Predication</a>
                     </div>
-                    <div class="flex flex-col gap-2 p-4 text-sm"> 
-                        <li class="text-gray-300 text-sm pf">Collect dataset</li>
-                        <li class="text-gray-300 text-sm pf">Build machine learning model for predict future result using python programming</li>
-                        <li class="text-gray-300 text-sm pf">Pandas, Logistic Regression to build the model.</li>
-                        <li class="text-gray-300 text-sm pf">API integration using Flask, AJAX</li>
-                    </div>
+                    <!-- <div class="flex flex-col gap-2 p-4 text-sm"> 
+                        <li class="text-black text-sm pf">Collect dataset</li>
+                        <li class="text-black text-sm pf">Build machine learning model for predict future result using python programming</li>
+                        <li class="text-black text-sm pf">Pandas, Logistic Regression to build the model.</li>
+                        <li class="text-black text-sm pf">API integration using Flask, AJAX</li>
+                    </div> -->
                 </div>
 
-                <div class="flex flex-col gap-2 border border-2 p-5 rounded-xl">
-                    <div class="mt-3">
+                <div class="flex flex-col gap-2 border p-5 rounded-xl">
+                    <div class="">
                         <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">HRMS & Invoice System</a>
                     </div>
-                    <div class="flex flex-col gap-2 p-4 text-sm"> 
-                        <li class="text-gray-300 text-sm pf">Attendance & Payroll management</li>
-                        <li class="text-gray-300 text-sm pf">Invoice managemnt</li>
-                        <li class="text-gray-300 text-sm pf">API integration using Django, AJAX</li>
-                    </div>
+                    <!-- <div class="flex flex-col gap-2 p-4 text-sm"> 
+                        <li class="text-black text-sm pf">Attendance & Payroll management</li>
+                        <li class="text-black text-sm pf">Invoice managemnt</li>
+                        <li class="text-black text-sm pf">API integration using Django, AJAX</li>
+                    </div> -->
                 </div>
 
-                <div class="flex flex-col gap-2 border border-2 p-5 rounded-xl">
-                    <div class="mt-3">
-                        <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">Rust Ecommerce API & LMS API</a>
+                <div class="flex flex-col gap-2 border p-5 rounded-xl">
+                    <div class="">
+                        <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">Rust LMS API</a>
                     </div>
-                    <div class="flex flex-col gap-2 p-4 text-sm"> 
-                        <li class="text-gray-300 text-sm pf">Build api using rust programming, actix web framework</li>
-                        <li class="text-gray-300 text-sm pf">Enable authentication using JWT & Session management</li>
-                        <li class="text-gray-300 text-sm pf">Frontend intergration with vue</li>
-                        <li class="text-gray-300 text-sm pf">Deployment using nginx, aws, supervisor and docker</li>
-                    </div>
+                    <!-- <div class="flex flex-col gap-2 p-4 text-sm"> 
+                        <li class="text-black text-sm pf">Build api using rust programming, actix web framework</li>
+                        <li class="text-black text-sm pf">Enable authentication using JWT management</li>
+                        <li class="text-black text-sm pf">Frontend intergration with vue</li>
+                        <li class="text-black text-sm pf">Deployment using nginx, aws, systemctl and docker</li>
+                    </div> -->
                 </div>
             </div>
 
         </div>
     </div>
 
-    <div class="section bg-[#181618]" id="articles">
+    <div class="section" id="articles">
         <div class="container mx-auto max-w-5xl py-10 lg:py-10 px-6 flex flex-col gap-6">
+            <!-- <div class="flex flex-col gap-2">
+                <h1 class="text-xl text-black font-extrabold text-yellow-700">Articles</h1>
+            </div> -->
+
             <div class="flex flex-col gap-2">
-                <h1 class="text-xl text-gray-300 headf">Articles</h1>
+                <h1 class="text-lg font-bold text-black">Articles</h1>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-10 semi">
-                <div class="flex flex-col gap-4 border border-2 rounded-xl p-5 relative">
-                    <p class="font-semibold text-left text-sm text-gray-300">Move Production | Deploy Actix Web (4)
+                <div class="flex flex-col gap-4 border rounded-xl p-5 relative">
+                    <p class="font-medium text-left text-sm text-black">Move Production | Deploy Actix Web (4)
                         Using, Nginx, Supervisor & CORS.</p>
                     <div class="mt-1">
                         <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-2 py-0.5 rounded-lg font-bold text-gray-800 bg-white">View</a>
+                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 border border-2 rounded-xl p-5 relative">
-                    <p class="font-semibold text-left text-sm text-gray-300">Simple File Creation App Using Rust.</p>
+                <div class="flex flex-col gap-4 border rounded-xl p-5 relative">
+                    <p class="font-medium text-left text-sm text-black">Simple File Creation App Using Rust.</p>
                     <div class="mt-1">
                         <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-2 py-0.5 rounded-lg font-bold text-gray-800 bg-white">View</a>
+                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 border border-2 rounded-xl p-5 relative">
-                    <p class="font-semibold text-left text-sm text-gray-300">Hello World in Rust.</p>
+                <div class="flex flex-col gap-4 border rounded-xl p-5 relative">
+                    <p class="font-medium text-left text-sm text-black">Hello World in Rust.</p>
                     <div class="mt-1">
                         <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-2 py-0.5 rounded-lg font-bold text-gray-800 bg-white">View</a>
+                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 border border-2 rounded-xl p-5 relative">
-                    <p class="font-semibold text-left text-sm text-gray-300">Django JWT Authentication | Authorization
+                <div class="flex flex-col gap-4 border rounded-xl p-5 relative">
+                    <p class="font-medium text-left text-sm text-black">Django JWT Authentication | Authorization
                     </p>
                     <div class="mt-1">
                         <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-2 py-0.5 rounded-lg font-bold text-gray-800 bg-white">View</a>
+                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 border border-2 rounded-xl p-5 relative">
-                    <p class="font-semibold text-left text-sm text-gray-300">Actix web Diesel Rest Api With Postgres.
+                <div class="flex flex-col gap-4 border rounded-xl p-5 relative">
+                    <p class="font-medium text-left text-sm text-black">Actix web Diesel Rest Api With Postgres.
                     </p>
                     <div class="mt-1">
                         <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-2 py-0.5 rounded-lg font-bold text-gray-800 bg-white">View</a>
+                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 border border-2 rounded-xl p-5 relative">
-                    <p class="font-semibold text-left text-sm text-gray-300">DRF’S Token Vs JWT Token in Django</p>
+                <div class="flex flex-col gap-4 border rounded-xl p-5 relative">
+                    <p class="font-medium text-left text-sm text-black">DRF’S Token Vs JWT Token in Django</p>
                     <div class="mt-1">
                         <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-2 py-0.5 rounded-lg font-bold text-gray-800 bg-white">View</a>
+                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 border border-2 rounded-xl p-5 relative">
-                    <p class="font-semibold text-left text-sm text-gray-300">Deploy Django Project into AWS EC2
+                <div class="flex flex-col gap-4 border rounded-xl p-5 relative">
+                    <p class="font-medium text-left text-sm text-black">Deploy Django Project into AWS EC2
                         Server.</p>
                     <div class="mt-1">
                         <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-2 py-0.5 rounded-lg font-bold text-gray-800 bg-white">View</a>
+                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 border border-2 rounded-xl p-5 relative">
-                    <p class="font-semibold text-left text-sm text-gray-300">Automate Git Using Linux Bash Script.</p>
+                <div class="flex flex-col gap-4 border rounded-xl p-5 relative">
+                    <p class="font-medium text-left text-sm text-black">Automate Git Using Linux Bash Script.</p>
                     <div class="mt-1">
                         <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-2 py-0.5 rounded-lg font-bold text-gray-800 bg-white">View</a>
+                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
                     </div>
                 </div>
-                <div class="flex flex-col gap-4 border border-2 rounded-xl p-5 relative">
-                    <p class="font-semibold text-left text-sm text-gray-300">Merge Sort Algorithm in Rust | Code
+                <div class="flex flex-col gap-4 border rounded-xl p-5 relative">
+                    <p class="font-medium text-left text-sm text-black">Merge Sort Algorithm in Rust | Code
                         Optimization</p>
                     <div class="mt-1">
                         <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-2 py-0.5 rounded-lg font-bold text-gray-800 bg-white">View</a>
+                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
                     </div>
                 </div>
 
@@ -502,16 +512,16 @@
    
 
 
-    <div class="bg-[#181618]">
+    <!-- <div class=">
         <div class="container mx-auto max-w-5xl px-6 flex flex-col gap-10 justify-center py-8">
             <div class="flex flex-col gap-4">
                
-                <p class="text-gray-300 pb-5 text-center text-sm font-bold pf">Copyright ©
+                <p class="text-black pb-5 text-center text-sm font-bold pf">Copyright ©
                     <script>document.write(new Date().getFullYear())</script> All rights reserved.
                 </p>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
