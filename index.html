@@ -1,521 +1,759 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iyappan M — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --navy: #080C18;
+      --navy-card: #111827;
+      --offwhite: #EEECe6;
+      --amber: #D4962A;
+      --amber-soft: rgba(212,150,42,0.12);
+      --slate: #4A6FA5;
+      --muted: #7A8499;
+      --border: rgba(255,255,255,0.06);
+      --light-glow: rgba(200,180,130,0.06);
+    }
 
+    html { scroll-behavior: smooth; }
 
-    <title>IYAPPAN M</title>
-    <meta name="description" content="IYAPPAN M">
+    body {
+      background: var(--navy);
+      color: var(--offwhite);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-    <meta property="og:url" content="https://iyappan04.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="IYAPPAN M">
-    <meta property="og:description" content="IYAPPAN M">
+    /* CANVAS BACKGROUND */
+    #bg-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-    <meta property="og:image"
-        content="https://opengraph.b-cdn.net/production/images/4106e801-8785-421b-967d-0fdc23f26286.png?token=zwuYPHyRzOU3o5a0UmgVNc_ZgMeEG-4DjN5DfSIDAno&height=692&width=682&expires=33268706996">
+    /* LIGHTING ORBS */
+    .light-orb {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(90px);
+    }
+    .orb-1 {
+      width: 500px; height: 500px;
+      top: -120px; left: -80px;
+      background: radial-gradient(circle, rgba(180,150,90,0.07) 0%, transparent 70%);
+      animation: orb-drift-1 18s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 400px; height: 400px;
+      bottom: 10%; right: -60px;
+      background: radial-gradient(circle, rgba(74,111,165,0.08) 0%, transparent 70%);
+      animation: orb-drift-2 22s ease-in-out infinite;
+    }
+    .orb-3 {
+      width: 300px; height: 300px;
+      top: 50%; left: 40%;
+      background: radial-gradient(circle, rgba(180,150,90,0.04) 0%, transparent 70%);
+      animation: orb-drift-3 28s ease-in-out infinite;
+    }
+    @keyframes orb-drift-1 {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(40px, 60px); }
+    }
+    @keyframes orb-drift-2 {
+      0%,100% { transform: translate(0,0); }
+      50% { transform: translate(-50px, -40px); }
+    }
+    @keyframes orb-drift-3 {
+      0%,100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(30px,-30px) scale(1.15); }
+    }
 
+    /* LAYOUT WRAPPER */
+    .page {
+      position: relative;
+      z-index: 1;
+    }
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="iyappan04.github.io">
-    <meta property="twitter:url" content="https://iyappan04.github.io/">
-    <meta name="twitter:title" content="IYAPPAN M">
-    <meta name="twitter:description" content="IYAPPAN M">
-    <meta name="twitter:image"
-        content="https://opengraph.b-cdn.net/production/images/4106e801-8785-421b-967d-0fdc23f26286.png?token=zwuYPHyRzOU3o5a0UmgVNc_ZgMeEG-4DjN5DfSIDAno&height=692&width=682&expires=33268706996">
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 6% 60px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+    .hero-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(44px, 7.5vw, 84px);
+      font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      color: var(--offwhite);
+      margin-bottom: 8px;
+    }
+    .cursor {
+      display: inline-block;
+      width: 3px; height: 0.82em;
+      background: var(--amber);
+      margin-left: 5px;
+      vertical-align: middle;
+      animation: blink 1.1s steps(1) infinite;
+    }
+    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
 
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(15px, 2.2vw, 20px);
+      font-weight: 400;
+      color: var(--slate);
+      margin-bottom: 30px;
+    }
+    .hero-desc {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 42px;
+      line-height: 1.85;
+    }
+    .hero-actions {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.22s;
+      letter-spacing: 0.03em;
+    }
+    .btn-primary {
+      background: var(--amber);
+      color: #08090f;
+    }
+    .btn-primary:hover { background: #e0a832; }
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.13);
+      color: var(--offwhite);
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.3); }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    .hero-meta {
+      margin-top: 60px;
+      display: flex; gap: 36px; flex-wrap: wrap;
+    }
+    .meta-item {
+      font-size: 11.5px;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      line-height: 1.6;
+    }
+    .meta-item span {
+      display: block;
+      color: var(--offwhite);
+      font-weight: 500;
+      font-size: 13px;
+    }
 
-    <link rel="shortcut icon" href="./img/mypng.jpg" type="image/x-icon">
+    /* SECTIONS */
+    section {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 80px 5%;
+      border-top: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--amber);
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
 
+    /* EXPERIENCE */
+    .exp-list { display: flex; flex-direction: column; gap: 32px; }
+    .exp-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 26px 28px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .exp-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212,150,42,0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .exp-card:hover { border-color: rgba(212,150,42,0.2); box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+    .exp-card:hover::before { opacity: 1; }
+    .exp-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 6px;
+      margin-bottom: 4px;
+    }
+    .exp-company {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--offwhite);
+    }
+    .exp-period {
+      font-size: 11.5px;
+      color: var(--amber);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    .exp-role {
+      font-size: 12.5px;
+      color: var(--slate);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .exp-points { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .exp-points li {
+      font-size: 13.5px;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.65;
+    }
+    .exp-points li::before {
+      content: '';
+      position: absolute; left: 0; top: 9px;
+      width: 4px; height: 4px;
+      background: var(--amber);
+      border-radius: 50%;
+      opacity: 0.7;
+    }
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    /* PROJECTS */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .proj-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 24px 20px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .proj-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--amber), var(--slate));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .proj-card:hover { border-color: rgba(212,150,42,0.18); box-shadow: 0 8px 32px rgba(0,0,0,0.28); }
+    .proj-card:hover::after { transform: scaleX(1); }
+    .proj-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--offwhite);
+      margin-bottom: 8px;
+    }
+    .proj-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .proj-tag {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 3px;
+      background: var(--amber-soft);
+      color: var(--amber);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> -->
+    /* OPEN SOURCE */
+    .oss-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 30px;
+    }
+    .oss-text {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 640px;
+      margin-bottom: 20px;
+    }
+    .oss-interests { display: flex; flex-wrap: wrap; gap: 10px; }
+    .oss-tag {
+      padding: 7px 15px;
+      background: rgba(74,111,165,0.1);
+      border: 1px solid rgba(74,111,165,0.2);
+      border-radius: 4px;
+      font-size: 12.5px;
+      color: #7a9fc8;
+      font-weight: 500;
+    }
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> -->
+    /* SKILLS */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 9px; }
+    .skill-tag {
+      padding: 7px 15px;
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 12.5px;
+      color: var(--offwhite);
+      font-weight: 400;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .skill-tag:hover { border-color: var(--amber); color: var(--amber); }
 
+    /* CERTS */
+    .cert-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; }
+    .cert-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 13.5px;
+      color: var(--offwhite);
+      flex: 1 1 200px;
+    }
+    .cert-issuer { font-size: 11px; color: var(--muted); margin-top: 3px; }
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"> -->
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+    .contact-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 20px;
+      text-decoration: none;
+      transition: border-color 0.22s, box-shadow 0.22s;
+    }
+    .contact-card:hover { border-color: rgba(212,150,42,0.3); box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+    .contact-type {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+    .contact-value {
+      font-size: 13.5px;
+      color: var(--offwhite);
+      font-weight: 500;
+      word-break: break-all;
+    }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    /* SCROLL FADE IN */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
+    @media (max-width: 768px) {
+      .hero { padding: 64px 5% 48px; }
+      section { padding: 56px 5%; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .hero-meta { gap: 24px; margin-top: 40px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .btn { width: auto; text-align: center; }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 48px 4% 40px; }
+      section { padding: 48px 4%; }
+      .exp-card, .proj-card, .oss-card { padding: 18px 16px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .cert-list { flex-direction: column; }
+      .orb-1 { width: 260px; height: 260px; }
+      .orb-2 { width: 200px; height: 200px; }
+      .orb-3 { display: none; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <style>
-        * {
-            scroll-behavior: smooth;
-            font-family: "Montserrat", sans-serif;
-        }
-    </style>
+  <canvas id="bg-canvas"></canvas>
+  <div class="light-orb orb-1"></div>
+  <div class="light-orb orb-2"></div>
+  <div class="light-orb orb-3"></div>
 
-    <!-- <div class="bg-white"> 
-        <img src="./img/bg.jpg" class="h-[500px] w-full object-cover" alt="">
+  <div class="page">
+
+    <div class="hero">
+      <p class="hero-eyebrow">Software Engineer</p>
+      <h1 class="hero-name">Iyappan M<span class="cursor"></span></h1>
+      <p class="hero-title">3+ Years Building High-Performance Systems</p>
+      <p class="hero-desc">
+        I engineer low-latency trading infrastructure, distributed systems, and intelligent backends. Currently building order matching engines and risk systems for crypto exchanges at 63moons.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:iyappank165@gmail.com">Get in Touch</a>
+        <a class="btn btn-secondary" href="https://iyappan04.github.io" target="_blank">Portfolio Site</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/iyappan-m-a5411023b/" target="_blank">LinkedIn</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item">Location<span>Mumbai, India</span></div>
+        <div class="meta-item">Native<span>Trichy, Tamil Nadu</span></div>
+        <div class="meta-item">Phone<span>+91 93447 98048</span></div>
+      </div>
     </div>
-     -->
-    <div class="section py-10 mt-5 px-6" id="about_me">
 
-        <div class="container mx-auto max-w-5xl py-10 lg:py-20 px-6 flex flex-col gap-3 w-full bg-black rounded-2xl">
+    <section id="experience">
+      <p class="section-label">Work History</p>
+      <div class="exp-list">
 
+        <div class="exp-card reveal">
+          <div class="exp-header">
             <div>
-                <h2 class="text-white text-center text-base lg:text-lg font-bold">
-                Web, ML, Blockchain Engineer</h2>
+              <div class="exp-company">63moons</div>
+              <div class="exp-role">Software Engineer — Onsite, Mumbai</div>
             </div>
-
-            <h2 class="text-sm text-center text-white leading-loose font-semibold">2 Years of Experience</h2>
-
+            <div class="exp-period">Dec 2025 — Present</div>
+          </div>
+          <ul class="exp-points">
+            <li>Order matching engine for spot, futures, and options on a crypto exchange</li>
+            <li>High-performance messaging system using Aeron</li>
+            <li>Optimized data structures — lock-free concurrent maps, ART maps, bitmaps, FIFO lists</li>
+            <li>Pre-trade and post-trade risk engine</li>
+            <li>Multi-asset integration and trading bot development with strategies</li>
+            <li>Distributed systems using Raft consensus and etcd</li>
+          </ul>
         </div>
-    </div>
 
-
-    <div class="section pt-5" id="about_me">
-        <div class="container mx-auto max-w-5xl py-5 lg:py-5 px-6 flex flex-col gap-10">
-            <div class="flex flex-col lg:flex-row w-full items-start gap-5 lg:gap-0">
-                <div class="w-full lg:w-[40%] flex flex-col gap-4">
-
-
-
-                    <div class="w-full flex flex-col items-center justify-center lg:items-start lg:justify-start">
-                        <img src="./me.jpeg" class="rounded-full border-2 w-[135px] h-[135px] object-cover" />
-
-                        <div class="mt-5">
-                            <h2 class="text-black text-base font-bold">
-                                IYAPPAN M</h2>
-                        </div>
-
-
-
-                        <h2 class="text-xs text-black leading-loose font-medium">Developer / Web, ML, Web3</h2>
-
-                    </div>
-                    <div class="flex flex-col gap-2">
-
-
-
-
-                    </div>
-                </div>
-                <div class="w-full lg:w-[60%] flex flex-col gap-3">
-
-
-                    <p class="text-sm text-black mt-2">
-                        Experienced in software development, Deep understanding about programming, code structure,
-                        modularity, code reusable, threading, time & space complexity and memory safe. ability to work
-                        with future development technologies. Good communication with public speaking.
-                        <br/><br/>
-
-                        Expertise in rust, actix web, python, linux, web3, blockchain, django, shell scripting as well
-                        as working in frontend development with responsive design using tailwind css, js and vue js.
-                        Experienced to write simple, fast, concurrent and self execute code with applications as well as
-                        cloud development docker and aws also handling web socket, redis as a message queue. Also build
-                        few apps using machine learning and blockchain in products development.
-
-                        <br/><br/>
-
-                        Also design a large scale system with microservices and monolithic architecture with kafka,
-                        redis and kubernetes.
-                    </p>
-
-                    <div class="mt-4">
-                        <a href="./docs/IYAPPAN-CV.pdf"
-                            class="text-xs px-4 py-2 rounded-full font-medium bg-black text-white">View
-                            Resume</a>
-                    </div>
-                </div>
+        <div class="exp-card reveal">
+          <div class="exp-header">
+            <div>
+              <div class="exp-company">Vanan Services</div>
+              <div class="exp-role">Software Engineer — Remote, Chennai</div>
             </div>
+            <div class="exp-period">Sep 2025 — Nov 2025</div>
+          </div>
+          <ul class="exp-points">
+            <li>NLP modules and database optimization layers</li>
+            <li>Python and Node.js backend for a large-scale CRM</li>
+            <li>Text-to-speech and audio processing pipelines</li>
+            <li>Chatbot development and integrations</li>
+          </ul>
         </div>
-    </div>
 
-
-    <div class="section" id="experience">
-        <div class="container mx-auto max-w-5xl py-10 lg:py-10 px-6 flex flex-col gap-5">
-
-            <div class="flex flex-col gap-2">
-                <h1 class="text-base font-bold text-black">Experience</h1>
+        <div class="exp-card reveal">
+          <div class="exp-header">
+            <div>
+              <div class="exp-company">Chadura Tech</div>
+              <div class="exp-role">Software Engineer — Onsite, Bengaluru</div>
             </div>
-
-            <ol class="relative border-[#694235] dark:border-gray-700">
-                <li class="mb-5 border-2 rounded-2xl p-5">
-
-                    <h3 class="flex items-center mb-1 text-sm text-black semi font-bold">Full Stack
-                        Developer - Chadura Tech
-
-                    </h3>
-                    <div class="flex lg:hidden">
-
-                    </div>
-
-                    <p class="text-xs mb-1 text-black pf">2 Years of Experience / July 10, 2023 (Bengaluru, Karnataka)
-                    </p>
-
-                </li>
-                <li class="mb-10 border-2 rounded-2xl p-5">
-
-                    <h3 class="mb-1 text-sm text-black semi font-bold">
-                        Intern at Chadura Tech / B.Sc Computer Science</h3>
-                    <time class="block mb-2 text-xs text-black">2021
-                        (Bharathidasan University)</time>
-
-
-                </li>
-
-            </ol>
+            <div class="exp-period">Jul 2023 — Sep 2025</div>
+          </div>
+          <ul class="exp-points">
+            <li>API development and third-party integrations</li>
+            <li>ML and Rust-based systems development</li>
+            <li>Audio noise cancellation pipelines</li>
+            <li>Real-time group chat platform using WebSocket and Django</li>
+            <li>Python application development</li>
+          </ul>
         </div>
-    </div>
 
-    <div class="section" id="experience">
-        <div class="container mx-auto max-w-5xl pb-10 lg:pb-10 px-6 flex flex-col gap-5">
+      </div>
+    </section>
 
-            <div class="flex flex-col gap-2">
-                <h1 class="text-base font-bold text-black">Certificates</h1>
-            </div>
+    <section id="projects">
+      <p class="section-label">Selected Projects</p>
+      <div class="proj-grid">
 
-            <ol class="relative border-[#694235] dark:border-gray-700">
-                <li class="mb-2 border-2 rounded-2xl p-5">
-
-                    <h3 class="flex items-center mb-1 text-sm text-black semi font-bold"> Machine Learning with Python
-
-                    </h3>
-                    <div class="flex lg:hidden">
-
-                    </div>
-
-                    <p class="text-xs mb-1 text-black pf">Company: SmartInternz</p>
-
-                    <div class="mt-5">
-                        <a href="./docs/Certificate.pdf"
-                            class="text-xs px-4 py-1.5 rounded-full font-medium bg-black text-white">
-                            View Certificate</a>
-                    </div>
-
-                </li>
-
-
-            </ol>
-
-             <ol class="relative border-[#694235] dark:border-gray-700">
-                <li class="mb-5 border-2 rounded-2xl p-5">
-
-                    <h3 class="flex items-center mb-1 text-sm text-black semi font-bold"> Blockchain Basics
-
-                    </h3>
-                    <div class="flex lg:hidden">
-
-                    </div>
-
-                    <p class="text-xs mb-1 text-black pf">Company: GreetLearning</p>
-
-                    <div class="mt-5">
-                        <a href="https://www.mygreatlearning.com/certificate/UOQNNVSW"
-                            class="text-xs px-4 py-1.5 rounded-full font-medium bg-black text-white">
-                            View Certificate</a>
-                    </div>
-
-                </li>
-
-
-            </ol>
-
+        <div class="proj-card reveal">
+          <div class="proj-name">Crypto Order Matching Engine</div>
+          <div class="proj-desc">High-throughput matching engine for spot, futures, and options trading. Built for sub-microsecond latency with lock-free data structures and Aeron messaging.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Rust</span>
+            <span class="proj-tag">Aeron</span>
+            <span class="proj-tag">Lock-free</span>
+            <span class="proj-tag">C++</span>
+          </div>
         </div>
-    </div>
 
-    <div class="section" id="expertise">
-
-        <div class="container mx-auto max-w-5xl px-6 flex flex-col gap-10">
-            <!-- <div class="flex flex-col gap-2">
-                <h1 class="text-xl text-black font-bold text-yellow-700"></h1>
-            </div> -->
-
-            <div class="flex flex-col gap-2">
-                <h1 class="text-base font-bold text-black">Expertise</h1>
-            </div>
-
-            <div class="grid grid-cols-3 lg:grid-cols-7 gap-y-6 gap-x-6">
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <img src="./img/icons8-rust-48.png" alt="">
-
-                </div>
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-
-                    <img 
-                        src="./img/icons8-python-50.png" />
-                </div>
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <img src="./img/icons8-django-50.png" alt="">
-                </div>
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <img src="./img/icons8-js-48.png" alt="">
-                </div>
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <!-- <a href="#" class="px-1 lg:px-3 py-1 rounded-lg font-bold semi">Django</a> -->
-                    <!-- <img width="48" height="48" src="https://img.icons8.com/color/48/vue-js.png" alt="vue-js" /> -->
-                     <img src="./img/icons8-vue-js-50.png" alt="">
-                </div>
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                   
-                     <img src="./img/icons8-linux-50.png" alt="">
-                </div>
-
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                   
-
-                    <img width="50" height="50" src="./img/icons8-solidity-100.png" alt="">
-
-                </div>
-                
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                   <img src="./img/icons8-docker-48.png" alt="">
-                </div>
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                     <img src="./img/icons8-node-js-48.png" alt="">
-                </div>
-                <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <img src="./img/icons8-solana-50.png" alt="">
-                </div>
-                  <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <img src="./img/icons8-aws-50.png" alt="">
-                </div>
-
-                  <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <img src="./img/icons8-bash-50.png" alt="">
-                </div>
-                  <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <img src="./img/icons8-c-50.png" alt="">
-                </div>
-
-                 <div class="text-center text-xs w-full bg-white text-gray-900 rounded-xl py-2 px-1">
-                    <img src="./img/icons8-postgres-50.png" alt="">
-                </div>
-
-            </div>
-
+        <div class="proj-card reveal">
+          <div class="proj-name">Pre & Post Trade Risk Engine</div>
+          <div class="proj-desc">Real-time risk evaluation system covering margin checks, position limits, and exposure monitoring across multiple asset classes before and after order execution.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Rust</span>
+            <span class="proj-tag">Distributed</span>
+            <span class="proj-tag">Multi-asset</span>
+          </div>
         </div>
-    </div>
 
-
-    <div class="section" id="projects">
-        <div class="container mx-auto max-w-5xl py-10 lg:py-10 px-6 flex flex-col gap-6">
-
-            <div class="flex flex-col gap-2">
-                <h1 class="text-base font-bold text-black">Projects</h1>
-            </div>
-
-
-
-            <div class="grid lg:grid-cols-3 gap-5">
-                <div class="flex flex-col gap-2 border px-2 py-5 rounded-xl">
-
-                    <div class="">
-                        <a href="#"
-                            class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi mt-10">Audio Noise
-                            Cancellation</a>
-                    </div>
-                    <div class="flex flex-col gap-2 px-4">
-                        <li class="text-black text-xs pf">Build audio recording using base64 format and django.</li>
-                        <li class="text-black text-xs pf">Model integration using machine learning.</li>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-2 border px-2 py-5 rounded-xl">
-                    <div class="">
-                        <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">Group
-                            Chat</a>
-                    </div>
-                    <div class="flex flex-col gap-2 px-4 text-xs">
-                        <li class="text-black text-xs pf">Websocket integration both frontend & backend integration</li>
-                        <li class="text-black text-xs pf">Stripe payment integration, suscription</li>
-                        <li class="text-black text-xs pf">Custom middleware integration</li>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-2 border px-2 py-5 rounded-xl">
-                    <div class="">
-                        <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">LMS</a>
-                    </div>
-                    <div class="flex flex-col gap-2 px-4 text-xs">
-                        <li class="text-black text-xs pf">Student mangement and course management system</li>
-                        <li class="text-black text-xs pf">Create course with ai</li>
-                        <li class="text-black text-xs pf">Audio & video file Integration</li>
-                        <li class="text-black text-xs pf">Credential management system</li>
-                        <li class="text-black text-xs pf">Large file Upload, Plagiarism checker</li>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-2 border px-2 py-5 rounded-xl">
-                    <div class="">
-                        <a href="#"
-                            class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">University
-                            Admission Predication</a>
-                    </div>
-                    <div class="flex flex-col gap-2 px-4 text-xs"> 
-                        <li class="text-black text-xs pf">Collect dataset, analysis</li>
-                        <li class="text-black text-xs pf">Build machine learning model for predict future result using python programming</li>
-                        <li class="text-black text-xs pf">Pandas, Logistic Regression to build the model.</li>
-                        <li class="text-black text-xs pf">API integration using Flask, AJAX</li>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-2 border px-2 py-5 rounded-xl">
-                    <div class="">
-                        <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">HRMS &
-                            Invoice System</a>
-                    </div>
-                    <div class="flex flex-col gap-2 px-4 text-xs"> 
-                        <li class="text-black text-xs pf">Attendance & Payroll management</li>
-                        <li class="text-black text-xs pf">Invoice management & Suscription management</li>
-                        <li class="text-black text-xs pf">API integration using Django, AJAX</li>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-2 border px-2 py-5 rounded-xl">
-                    <div class="">
-                        <a href="#" class="text-xs px-4 py-1 rounded-lg font-bold text-gray-900 bg-white semi">Rust LMS
-                            API</a>
-                    </div>
-                    <div class="flex flex-col gap-2 px-4 text-xs"> 
-                        <li class="text-black text-xs pf">Build api using rust programming, actix web framework</li>
-                        <li class="text-black text-xs pf">Enable authentication using JWT management</li>
-                        <li class="text-black text-xs pf">Frontend intergration with vue</li>
-                        <li class="text-black text-xs pf">Deployment using nginx, aws, systemctl and docker</li>
-                    </div>
-                </div>
-            </div>
-
+        <div class="proj-card reveal">
+          <div class="proj-name">Distributed Consensus System</div>
+          <div class="proj-desc">Fault-tolerant coordination layer using Raft consensus and etcd for leader election, state replication, and cluster configuration management.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Raft</span>
+            <span class="proj-tag">etcd</span>
+            <span class="proj-tag">Rust</span>
+          </div>
         </div>
-    </div>
 
-    <div class="section" id="articles">
-        <div class="container mx-auto max-w-5xl py-10 lg:py-10 px-6 flex flex-col gap-6">
-            <!-- <div class="flex flex-col gap-2">
-                <h1 class="text-xl text-black font-extrabold text-yellow-700">Articles</h1>
-            </div> -->
-
-            <div class="flex flex-col gap-2">
-                <h1 class="text-base font-bold text-black">Articles</h1>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-10 semi">
-                <div class="flex flex-col gap-4 border rounded-xl p-5 relative justify-between">
-                    <p class="font-semibold text-left text-xs text-black max-w-[80%]">Move Production | Deploy Actix Web
-                        (4)
-                        Using, Nginx, Supervisor & CORS.</p>
-                    <div class="mt-1">
-                        <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-4 border rounded-xl p-5 relative justify-between">
-                    <p class="font-semibold text-left text-xs text-black max-w-[80%]">Simple File Creation App Using
-                        Rust.</p>
-                    <div class="mt-1">
-                        <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-4 border rounded-xl p-5 relative justify-between justify-between">
-                    <p class="font-semibold text-left text-xs text-black max-w-[80%]">Hello World in Rust.</p>
-                    <div class="mt-1">
-                        <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-4 border rounded-xl p-5 relative justify-between">
-                    <p class="font-semibold text-left text-xs text-black max-w-[80%]">Django JWT Authentication |
-                        Authorization
-                    </p>
-                    <div class="mt-1">
-                        <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-4 border rounded-xl p-5 relative justify-between">
-                    <p class="font-semibold text-left text-xs text-black max-w-[80%]">Actix web Diesel Rest Api With
-                        Postgres.
-                    </p>
-                    <div class="mt-1">
-                        <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-4 border rounded-xl p-5 relative justify-between">
-                    <p class="font-semibold text-left text-xs text-black max-w-[80%]">DRF’S Token Vs JWT Token in Django
-                    </p>
-                    <div class="mt-1">
-                        <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-4 border rounded-xl p-5 relative justify-between justify-between">
-                    <p class="font-semibold text-left text-xs text-black max-w-[80%]">Deploy Django Project into AWS EC2
-                        Server.</p>
-                    <div class="mt-1">
-                        <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-4 border rounded-xl p-5 relative justify-between">
-                    <p class="font-semibold text-left text-xs text-black max-w-[80%]">Automate Git Using Linux Bash
-                        Script.</p>
-                    <div class="mt-1">
-                        <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-4 border rounded-xl p-5 relative justify-between">
-                    <p class="font-semibold text-left text-xs text-black max-w-[80%]">Merge Sort Algorithm in Rust |
-                        Code
-                        Optimization</p>
-                    <div class="mt-1">
-                        <a href="https://medium.com/@iyappan04"
-                            class="text-xs px-4 py-1.5 rounded-full text-white bg-black">Read Article</a>
-                    </div>
-                </div>
-
-            </div>
-
-
+        <div class="proj-card reveal">
+          <div class="proj-name">Algorithmic Trading Bots</div>
+          <div class="proj-desc">Automated trading strategies integrated into the exchange infrastructure. Covers market-making, arbitrage, and signal-based execution with low-latency order routing.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Rust</span>
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">Kafka</span>
+          </div>
         </div>
-    </div>
 
-
-    <!-- <div class="fixed bg-gray-500 bg-opacity-50 top-0 bottom-0 right-0 left-0"> 
-        <div class="bg-white"> 
-         
-            <iframe src="./docs/IYAPPAN M CV.pdf" frameborder="0"></iframe>
+        <div class="proj-card reveal">
+          <div class="proj-name">Real-time Group Chat Platform</div>
+          <div class="proj-desc">Scalable group messaging system with persistent rooms, WebSocket connections, and a Django REST backend. Supports concurrent users with efficient pub/sub architecture.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">WebSocket</span>
+            <span class="proj-tag">Django</span>
+            <span class="proj-tag">Python</span>
+          </div>
         </div>
-    </div> -->
 
-    <!-- <div class=">
-        <div class="container mx-auto max-w-5xl px-6 flex flex-col gap-10 justify-center py-8">
-            <div class="flex flex-col gap-4">
-               
-                <p class="text-black pb-5 text-center text-sm font-bold pf">Copyright ©
-                    <script>document.write(new Date().getFullYear())</script> All rights reserved.
-                </p>
-            </div>
+        <div class="proj-card reveal">
+          <div class="proj-name">Audio Noise Cancellation Pipeline</div>
+          <div class="proj-desc">ML-based pipeline for real-time audio denoising. Includes text-to-speech synthesis and audio processing utilities for voice-driven applications and CRM integrations.</div>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">ML</span>
+            <span class="proj-tag">NLP</span>
+            <span class="proj-tag">Node.js</span>
+          </div>
         </div>
-    </div> -->
 
+      </div>
+    </section>
 
+    <section id="opensource">
+      <p class="section-label">Open Source</p>
+      <div class="oss-card reveal">
+        <p class="oss-text">
+          I'm actively looking to contribute to open-source projects in systems programming, high-performance computing, and distributed infrastructure. My interest lies in low-latency Rust libraries, lock-free data structures, and developer tooling for trading and financial systems. I find the collaborative nature of open source valuable for pushing the limits of what's possible in performance-critical software.
+        </p>
+        <div class="oss-interests">
+          <span class="oss-tag">Rust ecosystem</span>
+          <span class="oss-tag">Lock-free data structures</span>
+          <span class="oss-tag">Distributed systems</span>
+          <span class="oss-tag">Financial infrastructure</span>
+          <span class="oss-tag">High-performance messaging</span>
+          <span class="oss-tag">Blockchain protocols</span>
+        </div>
+      </div>
+    </section>
 
-    <script>
+    <section id="skills">
+      <p class="section-label">Technical Stack</p>
+      <div class="skills-grid reveal">
+        <div class="skill-tag">Rust</div>
+        <div class="skill-tag">Python</div>
+        <div class="skill-tag">Node.js</div>
+        <div class="skill-tag">C++</div>
+        <div class="skill-tag">Actix Web</div>
+        <div class="skill-tag">Data Structures & Algorithms</div>
+        <div class="skill-tag">Machine Learning</div>
+        <div class="skill-tag">Microservices</div>
+        <div class="skill-tag">Distributed Systems</div>
+        <div class="skill-tag">AWS Cloud</div>
+        <div class="skill-tag">Databases</div>
+        <div class="skill-tag">Blockchain</div>
+        <div class="skill-tag">Bitcoin</div>
+        <div class="skill-tag">WebSocket</div>
+        <div class="skill-tag">Kafka</div>
+        <div class="skill-tag">Aeron</div>
+        <div class="skill-tag">Vue.js</div>
+        <div class="skill-tag">React</div>
+      </div>
+      <div class="cert-list">
+        <div class="cert-card reveal">
+          Machine Learning
+          <div class="cert-issuer">Smart Internz</div>
+        </div>
+        <div class="cert-card reveal">
+          Blockchain Basics
+          <div class="cert-issuer">Great Learning</div>
+        </div>
+      </div>
+    </section>
 
-    </script>
+    <section id="contact">
+      <p class="section-label">Get In Touch</p>
+      <div class="contact-grid">
+        <a class="contact-card reveal" href="mailto:iyappank165@gmail.com">
+          <div class="contact-type">Email</div>
+          <div class="contact-value">iyappank165@gmail.com</div>
+        </a>
+        <a class="contact-card reveal" href="tel:+919344798048">
+          <div class="contact-type">Phone</div>
+          <div class="contact-value">+91 93447 98048</div>
+        </a>
+        <a class="contact-card reveal" href="https://iyappan04.github.io" target="_blank">
+          <div class="contact-type">Portfolio</div>
+          <div class="contact-value">iyappan04.github.io</div>
+        </a>
+        <a class="contact-card reveal" href="https://www.linkedin.com/in/iyappan-m-a5411023b/" target="_blank">
+          <div class="contact-type">LinkedIn</div>
+          <div class="contact-value">iyappan-m-a5411023b</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // BACKGROUND CANVAS — distributed node/packet animation
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let W, H, nodes, packets;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function initNodes() {
+      const count = Math.floor((W * H) / 22000);
+      nodes = Array.from({ length: count }, () => ({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.18,
+        vy: (Math.random() - 0.5) * 0.18,
+        r: Math.random() * 1.4 + 0.4,
+        pulse: Math.random() * Math.PI * 2
+      }));
+      packets = [];
+    }
+
+    function spawnPacket() {
+      if (nodes.length < 2) return;
+      const from = nodes[Math.floor(Math.random() * nodes.length)];
+      const to = nodes[Math.floor(Math.random() * nodes.length)];
+      if (from === to) return;
+      const dx = to.x - from.x, dy = to.y - from.y;
+      if (Math.sqrt(dx*dx+dy*dy) > 220) return;
+      packets.push({ from, to, t: 0, speed: 0.008 + Math.random() * 0.006 });
+    }
+
+    function draw(ts) {
+      ctx.clearRect(0, 0, W, H);
+
+      // move nodes
+      nodes.forEach(n => {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > W) n.vx *= -1;
+        if (n.y < 0 || n.y > H) n.vy *= -1;
+        n.pulse += 0.018;
+      });
+
+      // edges
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = b.x - a.x, dy = b.y - a.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 180) {
+            const alpha = (1 - dist/180) * 0.09;
+            ctx.strokeStyle = `rgba(180,160,110,${alpha})`;
+            ctx.lineWidth = 0.6;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // nodes
+      nodes.forEach(n => {
+        const glow = 0.55 + Math.sin(n.pulse) * 0.2;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200,175,120,${glow * 0.55})`;
+        ctx.fill();
+      });
+
+      // packets
+      if (Math.random() < 0.04) spawnPacket();
+      packets = packets.filter(p => p.t < 1);
+      packets.forEach(p => {
+        p.t += p.speed;
+        const x = p.from.x + (p.to.x - p.from.x) * p.t;
+        const y = p.from.y + (p.to.y - p.from.y) * p.t;
+        ctx.beginPath();
+        ctx.arc(x, y, 1.6, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(212,150,42,${0.7 * (1 - Math.abs(p.t - 0.5) * 2)})`;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    initNodes();
+    requestAnimationFrame(draw);
+    window.addEventListener('resize', () => { resize(); initNodes(); });
+
+    // SCROLL REVEAL
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 
 </body>
-
 </html>
