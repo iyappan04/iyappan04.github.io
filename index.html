@@ -93,7 +93,7 @@
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center;
       padding: 80px 6% 60px;
-      max-width: 980px;
+      max-width: 1280px;
       margin: 0 auto;
     }
     .hero-eyebrow {
@@ -180,7 +180,7 @@
 
     /* SECTIONS */
     section {
-      max-width: 980px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 80px 5%;
       border-top: 1px solid var(--border);
@@ -415,7 +415,41 @@
       .orb-1 { width: 260px; height: 260px; }
       .orb-2 { width: 200px; height: 200px; }
       .orb-3 { display: none; }
+    } 
+
+
+    .wtl-live-dot {
+        margin-right: 10px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #4ade80;
+        display: inline-block;
+        flex-shrink: 0;
+        animation: wtlPulse 1.8s infinite;
     }
+
+    @keyframes wtlPulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+        }
+        70% {
+            box-shadow: 0 0 0 8px rgba(74, 222, 128, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+        }
+    }
+
+    @keyframes wtlSkeleton {
+        0% {
+            background-position: 120% 0;
+        }
+        100% {
+            background-position: -120% 0;
+        }
+    }
+
   </style>
 </head>
 <body>
@@ -428,8 +462,9 @@
   <div class="page">
 
     <div class="hero">
-      <p class="hero-eyebrow">Software Engineer</p>
-      <h1 class="hero-name">Iyappan M<span class="cursor"></span></h1>
+      <p class="hero-eyebrow"> <span class="wtl-live-dot"></span>   Software Engineer @63moons</p>
+      <h1 class="hero-name">Iyappan M</h1>
+      <!-- <span class="cursor"></span> -->
       <p class="hero-title">3+ Years Building High-Performance Systems</p>
       <p class="hero-desc">
         I engineer low-latency trading infrastructure, distributed systems, and intelligent backends. Currently building order matching engines and risk systems for crypto exchanges at 63moons.
@@ -524,7 +559,6 @@
           <div class="proj-desc">Real-time risk evaluation system covering margin checks, position limits, and exposure monitoring across multiple asset classes before and after order execution.</div>
           <div class="proj-tags">
             <span class="proj-tag">Rust</span>
-            <span class="proj-tag">Distributed</span>
             <span class="proj-tag">Multi-asset</span>
           </div>
         </div>
@@ -560,13 +594,12 @@
         </div>
 
         <div class="proj-card reveal">
-          <div class="proj-name">Audio Noise Cancellation Pipeline</div>
-          <div class="proj-desc">ML-based pipeline for real-time audio denoising. Includes text-to-speech synthesis and audio processing utilities for voice-driven applications and CRM integrations.</div>
+          <div class="proj-name">Audio Noise Cancellation</div>
+          <div class="proj-desc">ML-based pipeline for real-time audio denoising. Includes text-to-speech synthesis and audio processing utilities for voice-driven applications.</div>
           <div class="proj-tags">
             <span class="proj-tag">Python</span>
+                  <span class="proj-tag">Rust</span>
             <span class="proj-tag">ML</span>
-            <span class="proj-tag">NLP</span>
-            <span class="proj-tag">Node.js</span>
           </div>
         </div>
 
@@ -580,12 +613,12 @@
           I'm actively looking to contribute to open-source projects in systems programming, high-performance computing, and distributed infrastructure. My interest lies in low-latency Rust libraries, lock-free data structures, and developer tooling for trading and financial systems. I find the collaborative nature of open source valuable for pushing the limits of what's possible in performance-critical software.
         </p>
         <div class="oss-interests">
-          <span class="oss-tag">Rust ecosystem</span>
+          <span class="oss-tag">Rust & ML</span>
           <span class="oss-tag">Lock-free data structures</span>
           <span class="oss-tag">Distributed systems</span>
           <span class="oss-tag">Financial infrastructure</span>
           <span class="oss-tag">High-performance messaging</span>
-          <span class="oss-tag">Blockchain protocols</span>
+          <span class="oss-tag">Blockchain</span>
         </div>
       </div>
     </section>
@@ -611,6 +644,8 @@
         <div class="skill-tag">Aeron</div>
         <div class="skill-tag">Vue.js</div>
         <div class="skill-tag">React</div>
+        <div class="skill-tag">Docker</div>
+        <div class="skill-tag">Linux</div>
       </div>
       <div class="cert-list">
         <div class="cert-card reveal">
